@@ -76,13 +76,13 @@ def find_leaves(tree):
 
 if __name__ == '__main__':
 
-    tree = Tree(1)
-    tree.insert_element(2)
-    tree.insert_element(3)
-    tree.insert_element(4)
-    tree.insert_element(5)
-    tree.insert_element(6)
-    tree.insert_element(7)
-    tree.level_order_traversal()
-    if find_leaves(tree):
+    t = Tree(1)
+    t.insert_element(2)
+    t.insert_element(3)
+    t.insert_element(4)
+    t.insert_element(5)
+    t.insert_element(6)
+    t.insert_element(7)
+    t.level_order_traversal()
+    find_leaves(t)
 
