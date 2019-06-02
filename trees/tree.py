@@ -3,7 +3,7 @@ from queue import Queue
 
 class Node:
 
-    def __init__(self, data=None):
+    def __init__(self, data):
         self.data = data
         self.left = None
         self.right = None
@@ -42,6 +42,7 @@ class Tree:
             if node.right:
                 queue.put(node.right)
         print(result)
+        return
 
 
 if __name__ == '__main__':
