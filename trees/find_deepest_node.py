@@ -1,3 +1,8 @@
+"""
+An algorithm for...
+Data Structure and Algorithmic Thinking with Python
+Chapter 6, Problem 12, Page 147
+"""
 from queue import Queue
 
 

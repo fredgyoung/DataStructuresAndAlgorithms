@@ -1,3 +1,7 @@
+"""
+An Tree class
+Includes a basic Node class.
+"""
 from queue import Queue
 
 

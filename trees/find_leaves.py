@@ -1,3 +1,8 @@
+"""
+An algorithm for finding the number of leaves in a tree
+Data Structure and Algorithmic Thinking with Python
+Chapter 6, Problem 14, Page 147
+"""
 from queue import Queue
 
 
@@ -9,11 +14,48 @@ class Node:
         self.right = None
 
 
-def find_leaves(root):
+class Tree:
+
+    def __init__(self, data):
+        self.root = Node(data)
+
+    def insert_element(self, value):
+        queue = Queue()
+        queue.put(self.root)
+        while not queue.empty():
+            node = queue.get()
+            if node.left:
+                queue.put(node.left)
+            else:
+                node.left = Node(value)
+                return
+            if node.right:
+                queue.put(node.right)
+            else:
+                node.right = Node(value)
+                return
+
+    def level_order_traversal(self):
+        result = []
+        queue = Queue()
+        queue.put(self.root)
+        while not queue.empty():
+            node = queue.get()
+            result.append(node.data)
+            if node.left:
+                queue.put(node.left)
+            if node.right:
+                queue.put(node.right)
+
+        print("Tree:", result)
+
+
+def find_leaves(tree):
 
     q = Queue()
-    q.put(root)
-    leaves = 0
+    q.put(tree.root)
+    leaves = []
+    leaf_count = 0
 
     while not q.empty():
         node = q.get()
@@ -25,17 +67,22 @@ def find_leaves(root):
             q.put(node.right)
 
         if not node.left and not node.right:
-            leaves += 1
+            leaf_count += 1
+            leaves.append(node.data)
 
-    return leaves
+    print("Leaf Count:", leaf_count)
+    print("Leaves:", leaves)
 
 
 if __name__ == '__main__':
 
-    tree = Node(1)
-    tree.left = Node(2)
-    tree.right = Node(3)
-    tree.left.left = Node(4)
-    tree.right.right = Node(7)
+    tree = Tree(1)
+    tree.insert_element(2)
+    tree.insert_element(3)
+    tree.insert_element(4)
+    tree.insert_element(5)
+    tree.insert_element(6)
+    tree.insert_element(7)
+    tree.level_order_traversal()
+    if find_leaves(tree):
 
-    print(find_leaves(tree))
