@@ -1,3 +1,8 @@
+"""
+An algorithm for finding half nodes in a tree
+Data Structure and Algorithmic Thinking with Python
+Chapter 6, Problem 16, Page 148
+"""
 from queue import Queue
 
 

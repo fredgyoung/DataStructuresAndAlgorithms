@@ -1,3 +1,8 @@
+"""
+An algorithm for finding full nodes in a tree
+Data Structure and Algorithmic Thinking with Python
+Chapter 6, Problem 15, Page 147
+"""
 from queue import Queue
 
 
